@@ -1,18 +1,18 @@
 <template>
-  <v-container>
+<v-container>
     <v-row>
       <v-col>
-        <Dashboard />
+        <Add />
       </v-col>
     </v-row>
   </v-container>
 </template>
 <script>
-  import Dashboard from '@/components/Dashboard'
+  import Add from '@/components/Add'
   export default {
-    name: 'Home',
+    name: 'AddStock',
     components: {
-      Dashboard
-    }
+      Add
+    },
   }
 </script>

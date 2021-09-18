@@ -1,7 +1,7 @@
 <template>
 <v-container>
-    <h2 class="orange--text py-4"> ADD STOCK </h2>
-    <v-card elevation="2" max-width="450">
+    <h2 class="orange--text py-4"> Add Stock </h2>
+    <v-card elevation="5" max-width="450">
         <v-card-text>
             <v-row>
                 <v-col>
@@ -22,6 +22,7 @@
                     dense
                     outlined
                     color="orange"
+                    type="number"
                     v-model="item"
                     ></v-text-field>
                 </v-col>
@@ -33,13 +34,14 @@
                     dense
                     outlined
                     color="orange"
+                    type="number"
                     v-model="price"
                     ></v-text-field>
                 </v-col>
             </v-row>
             <v-row>
                 <v-col align="right">
-                    <v-btn raised large block class="orange white--text" v-on:click="addProduct"> ADD STOCK </v-btn>
+                    <v-btn raised large block class="black orange--text" v-on:click="add"> ADD STOCK </v-btn>
                 </v-col>
             </v-row>
         </v-card-text>   
@@ -50,9 +52,6 @@
 <script>
   export default {
     name: 'Add',
-    props:{
-        product: Object
-    },
     data() {
         return{
             products: [
@@ -61,28 +60,117 @@
                 'PRODUCT03'
             ],
             selectedProduct: '',
-            item: '',
-            price: ''
-
+            item: null,
+            price: null,
+            product1: {},
+            product2: {},
+            product3: {},
+            sumItem: null,
+            sumPrice: null
         }
     },
     methods: {
-        addProduct(){
-            if (this.selectedProduct == '' || this.item == '' || this.price == ''){
-                alert("Please make sure you fill in all the fields");
+        check(){
+            if(this.selectedProduct == '' || this.item == '' || this.price == ''){
+                alert("Please make sure to fill in all the fields")
             }
-            else{
-                this.proctuct = {
-                    selectedProduct: this.selectedProduct,
-                    items: this.item,
-                    price: this.price
+        },
+        add(){
+            this.check();
+            if (this.selectedProduct == 'PRODUCT01'){
+                if (localStorage.getItem('product1')){
+                    const item = JSON.parse(localStorage.getItem('product1')).item;
+                    const price = JSON.parse(localStorage.getItem('product1')).price;
+                
+                    this.sumItem = parseInt(item) + parseInt(this.item);
+                    this.sumPrice = parseFloat(price) + parseFloat(this.price);
+                    let averagePrice = this.sumPrice/2;
+
+                    this.product1 = {
+                        item: this.sumItem,
+                        price: averagePrice.toFixed(2)
+                    };
+                    const parsed = JSON.stringify(this.product1);
+                    localStorage.setItem('product1', parsed);
+                    this.selectedProduct = ''; 
+                    this.item = ''; 
+                    this.price = '';
                 }
-              alert("Stock has been added"); 
-              console.log(this.proctuct);
-              this.selectedProduct = '',
-              this. item = '',
-              this. price = ''
+                else if (!localStorage.getItem('product1')){
+                    this.product1 = {
+                        item: this.item,
+                        price: this.price
+                    };
+                    const parsed = JSON.stringify(this.product1);
+                    localStorage.setItem('product1', parsed);
+                    this.selectedProduct = ''; 
+                    this.item = ''; 
+                    this.price = '';
+                }                            
             }
+            else if(this.selectedProduct == 'PRODUCT02'){
+                if (localStorage.getItem('product2')){
+                    const item = JSON.parse(localStorage.getItem('product2')).item;
+                    const price = JSON.parse(localStorage.getItem('product2')).price;
+                
+                    this.sumItem = parseInt(item) + parseInt(this.item);
+                    this.sumPrice = parseFloat(price) + parseFloat(this.price);
+                    let averagePrice = this.sumPrice/2;
+
+                    this.product2 = {
+                        item: this.sumItem,
+                        price: averagePrice.toFixed(2)
+                    };
+                    const parsed = JSON.stringify(this.product2);
+                    localStorage.setItem('product2', parsed);
+                    this.selectedProduct = ''; 
+                    this.item = ''; 
+                    this.price = '';
+                }
+                else if (!localStorage.getItem('product2')){
+                    this.product2 = {
+                        item: this.item,
+                        price: this.price
+                    };
+                    const parsed = JSON.stringify(this.product2);
+                    localStorage.setItem('product2', parsed);
+                    this.selectedProduct = ''; 
+                    this.item = ''; 
+                    this.price = '';
+                }
+            }
+            else if (this.selectedProduct == 'PRODUCT03'){
+                if (localStorage.getItem('product3')){
+                    const item = JSON.parse(localStorage.getItem('product3')).item;
+                    const price = JSON.parse(localStorage.getItem('product3')).price;
+                
+                    this.sumItem = parseInt(item) + parseInt(this.item);
+                    this.sumPrice = parseFloat(price) + parseFloat(this.price);
+                    let averagePrice = this.sumPrice/2;
+
+                    this.product3 = {
+                        item: this.sumItem,
+                        price: averagePrice.toFixed(2)
+                    };
+                    const parsed = JSON.stringify(this.product3);
+                    localStorage.setItem('product3', parsed);
+                    this.selectedProduct = ''; 
+                    this.item = ''; 
+                    this.price = '';
+                }
+                else if (!localStorage.getItem('product3')){
+                    this.product3 = {
+                        item: this.item,
+                        price: this.price
+                    };
+                    const parsed = JSON.stringify(this.product3);
+                    localStorage.setItem('product3', parsed);
+                    this.selectedProduct = ''; 
+                    this.item = ''; 
+                    this.price = '';
+                }
+            }
+          
         }
     },
     mounted(){

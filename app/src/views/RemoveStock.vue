@@ -1,18 +1,18 @@
 <template>
-  <v-container>
+ <v-container>
     <v-row>
       <v-col>
-        <Dashboard />
+        <Remove />
       </v-col>
     </v-row>
   </v-container>
 </template>
 <script>
-  import Dashboard from '@/components/Dashboard'
+  import Remove from '@/components/Remove.vue'
   export default {
-    name: 'Home',
+    name: 'RemoveStock',
     components: {
-      Dashboard
-    }
+      Remove
+    },
   }
 </script>
