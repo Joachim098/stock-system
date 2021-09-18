@@ -91,13 +91,14 @@
 
                     const email = JSON.parse(localStorage.getItem('product1')).email;
                     if(email === this.email){
-                        alert("You can not buy items of this product with the same email\n Please use a different email address");
+                        alert("You can not ship items of this product with the same email\n Please use a different email address");
                     }
                     else{
                         localStorage.setItem('product1', JSON.stringify(existing));
                         this.selectedProduct = ''; 
                         this.item = ''; 
                         this.email = '';
+                        alert("Stock has been removed");
                     }       
                 }
                 else{
@@ -126,6 +127,7 @@
                         this.selectedProduct = ''; 
                         this.item = ''; 
                         this.email = '';
+                        alert("Stock has been removed");
                     }       
                 }
                 else{
@@ -154,6 +156,7 @@
                         this.selectedProduct = ''; 
                         this.item = ''; 
                         this.email = '';
+                        alert("Stock has been removed");
                     }       
                 }
                 else{

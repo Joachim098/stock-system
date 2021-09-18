@@ -95,6 +95,7 @@
                     this.selectedProduct = ''; 
                     this.item = ''; 
                     this.price = '';
+                    alert("Stock has been added");
                 }
                 else if (!localStorage.getItem('product1')){
                     this.product1 = {
@@ -106,6 +107,7 @@
                     this.selectedProduct = ''; 
                     this.item = ''; 
                     this.price = '';
+                    alert("Stock has been added");
                 }                            
             }
             else if(this.selectedProduct == 'PRODUCT02'){
@@ -126,6 +128,7 @@
                     this.selectedProduct = ''; 
                     this.item = ''; 
                     this.price = '';
+                    alert("Stock has been added");
                 }
                 else if (!localStorage.getItem('product2')){
                     this.product2 = {
@@ -137,6 +140,7 @@
                     this.selectedProduct = ''; 
                     this.item = ''; 
                     this.price = '';
+                    alert("Stock has been added");
                 }
             }
             else if (this.selectedProduct == 'PRODUCT03'){
@@ -157,6 +161,7 @@
                     this.selectedProduct = ''; 
                     this.item = ''; 
                     this.price = '';
+                    alert("Stock has been added");
                 }
                 else if (!localStorage.getItem('product3')){
                     this.product3 = {
@@ -168,6 +173,7 @@
                     this.selectedProduct = ''; 
                     this.item = ''; 
                     this.price = '';
+                    alert("Stock has been added");
                 }
             }
           

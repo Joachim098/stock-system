@@ -78,7 +78,7 @@
       }
       if (localStorage.getItem('product3')) {
         try {
-          this.product1 = JSON.parse(localStorage.getItem('product3'));
+          this.product3 = JSON.parse(localStorage.getItem('product3'));
         } catch(e) {
           localStorage.removeItem('product3');
         }
