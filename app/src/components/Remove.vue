@@ -87,7 +87,7 @@
   
                     existing['email'] = this.email;
                     existing['item'] = this.sumItem;
-                    existing['price'] = this.sumPrice;
+                    existing['price'] = this.sumPrice.toFixed(2);
 
                     const email = JSON.parse(localStorage.getItem('product1')).email;
                     if(email === this.email){
@@ -116,7 +116,7 @@
   
                     existing['email'] = this.email;
                     existing['item'] = this.sumItem;
-                    existing['price'] = this.sumPrice;
+                    existing['price'] = this.sumPrice.toFixed(2);
 
                     const email = JSON.parse(localStorage.getItem('product2')).email;
                     if(email === this.email){
@@ -145,7 +145,7 @@
   
                     existing['email'] = this.email;
                     existing['item'] = this.sumItem;
-                    existing['price'] = this.sumPrice;
+                    existing['price'] = this.sumPrice.toFixed(2);
 
                     const email = JSON.parse(localStorage.getItem('product3')).email;
                     if(email === this.email){
